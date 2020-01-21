@@ -35,8 +35,19 @@ module.exports = {
         include
       },
       {
-        test: /\.css/,
-        loaders: ["style-loader", "css-loader", "postcss-loader"],
+        test: /\.module\.css/,
+        loaders: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              localIdentName: "[local]---[hash:base64:5]",
+              importLoaders: 1
+            }
+          },
+          "postcss-loader"
+        ],
         include
       }
     ]
