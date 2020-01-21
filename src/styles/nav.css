@@ -28,3 +28,6 @@
 .dft__nav__btn--next {
   text-align: right;
 }
+.dft__nav__btn--hidden {
+  visibility: hidden;
+}

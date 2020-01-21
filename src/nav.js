@@ -1,12 +1,17 @@
+import classnames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
 function getPrevClassName(props) {
-  return "dft__nav__btn dft__nav__btn--prev";
+  return classnames("dft__nav__btn dft__nav__btn--prev", {
+    "dft__nav__btn--hidden": !props.hasPrevious
+  });
 }
 
 function getNextClassName(props) {
-  return "dft__nav__btn dft__nav__btn--next";
+  return classnames("dft__nav__btn dft__nav__btn--next", {
+    "dft__nav__btn--hidden": !props.hasNext
+  });
 }
 
 function Nav(props) {
